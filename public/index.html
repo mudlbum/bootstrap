@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Overview</title>
+
+    <!-- Reset & optional Google Font -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    />
+
+    <!-- Our compiled CSS (Bootstrap + custom SCSS) -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/2216cb6a92.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Container for full-width layout -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-12 col-md-3 col-lg-2 bg-light sidebar">
+          <h4 class="px-3 mb-4">Dashboard Kit</h4>
+          <ul class="nav flex-column px-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"
+                ><i class="fas fa-home me-2"></i>Overview</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-ticket-alt me-2"></i>Tickets</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-lightbulb me-2"></i>Ideas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-address-book me-2"></i>Contacts</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-users me-2"></i>Agents</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-file-alt me-2"></i>Articles</a
+              >
+            </li>
+            <hr />
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-cog me-2"></i>Settings</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-credit-card me-2"></i>Subscription</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-12 col-md-9 col-lg-10 py-4">
+          <!-- Top Nav / Header -->
+          <div class="top-nav d-flex justify-content-between align-items-center">
+            <h2 class="m-0">Overview</h2>
+            <div class="user-info">
+              <div class="user-avatar"></div>
+              <span>Jones Ferdinand</span>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <!-- Stats Cards Row -->
+            <div class="row text-center g-3 mb-4">
+              <div class="col-6 col-lg-3">
+                <div class="stats-card">
+                  <span class="stats-label">Unresolved</span>
+                  <span class="stats-value">60</span>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="stats-card">
+                  <span class="stats-label">Overdue</span>
+                  <span class="stats-value">16</span>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="stats-card">
+                  <span class="stats-label">Open</span>
+                  <span class="stats-value">43</span>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="stats-card">
+                  <span class="stats-label">On hold</span>
+                  <span class="stats-value">64</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Today’s Trends Card -->
+            <div class="card chart-card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Today’s trends</h5>
+                <div class="row">
+                  <!-- Chart Column -->
+                  <div class="col-md-8">
+                    <div class="chart-container">
+                      <canvas id="trendChart"></canvas>
+                    </div>
+                  </div>
+                  <!-- Data Column -->
+                  <div class="col-md-4">
+                    <div class="trend-data">
+                      <div class="data-item">
+                        <span class="data-label">Resolved</span>
+                        <span class="data-value">449</span>
+                      </div>
+                      <hr />
+                      <div class="data-item">
+                        <span class="data-label">Received</span>
+                        <span class="data-value">426</span>
+                      </div>
+                      <hr />
+                      <div class="data-item">
+                        <span class="data-label">Average first response time</span>
+                        <span class="data-value">33m</span>
+                      </div>
+                      <hr />
+                      <div class="data-item">
+                        <span class="data-label">Average response time</span>
+                        <span class="data-value">3h 8m</span>
+                      </div>
+                      <hr />
+                      <div class="data-item">
+                        <span class="data-label">Resolution within SLA</span>
+                        <span class="data-value">94%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unresolved Tickets & Tasks -->
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="card info-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Unresolved Tickets</h5>
+                    <div class="ticket-item">
+                      <span>Waiting on Feature Request</span>
+                      <span>4238</span>
+                    </div>
+                    <div class="ticket-item">
+                      <span>Awaiting Customer Response</span>
+                      <span>1005</span>
+                    </div>
+                    <div class="ticket-item">
+                      <span>Awaiting Developer Fix</span>
+                      <span>914</span>
+                    </div>
+                    <div class="ticket-item">
+                      <span>Pending</span>
+                      <span>281</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card info-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Tasks</h5>
+                    <div class="task-item">
+                      <span>Finish ticket update</span>
+                      <span><span class="badge-status bg-warning text-dark">In progress</span></span>
+                    </div>
+                    <div class="task-item">
+                      <span>Create new ticket example</span>
+                      <span><span class="badge-status bg-secondary text-white">New</span></span>
+                    </div>
+                    <div class="task-item">
+                      <span>Update ticket report</span>
+                      <span><span class="badge-status bg-success text-white">Done</span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End p-4 -->
+        </main>
+      </div>
+    </div>
+
+    <!-- Chart.js + Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Chart Initialization -->
+    <script>
+      const ctx = document.getElementById('trendChart').getContext('2d');
+      const trendChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          datasets: [
+            {
+              label: 'Resolved Tickets',
+              data: [12, 19, 8, 17, 14, 9, 15],
+              fill: true,
+              backgroundColor: 'rgba(76, 110, 245, 0.1)',
+              borderColor: 'rgba(76, 110, 245, 1)',
+              tension: 0.3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: { beginAtZero: true }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

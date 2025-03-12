@@ -1,0 +1,160 @@
+// 1. Import Bootstrap functions first
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 2. Override Bootstrap variables as needed
+$primary: #4c6ef5;          // Primary color
+$secondary: #ff5722;        // Secondary color
+$body-bg: #f8f9fc;          // Background color
+$font-family-base: 'Inter', sans-serif;
+
+// Example overrides for accordion icons (if applicable)
+$accordion-icon-color: $primary;
+$accordion-icon-active-color: $secondary;
+
+// 3. Import full Bootstrap SCSS so our variables take effect
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// 4. Custom Styles
+
+// Global overrides
+$body-bg: #f7f8fc; // A slightly off-white background
+$font-family-base: 'Inter', sans-serif;
+
+// Custom colors for text
+$label-color: #9fa2b4;   // Lighter gray for small labels
+$value-color: #1f1f1f;   // Darker gray for main values
+
+body {
+  background-color: $body-bg;
+  font-family: $font-family-base;
+}
+
+// Sidebar
+.sidebar {
+  min-height: 100vh;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 1rem;
+  h4 {
+    font-weight: 600;
+  }
+  .nav-link {
+    color: #333;
+    margin: 0.3rem 0;
+    i {
+      font-size: 1rem;
+    }
+    &:hover,
+    &.active {
+      color: #4c6ef5;
+      background-color: #eef3ff;
+      border-radius: 0.4rem;
+    }
+  }
+}
+
+// Top nav / header
+.top-nav {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+// Stats cards
+.stats-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  .stats-label {
+    display: block;
+    font-size: 0.875rem;
+    color: $label-color;
+    margin-bottom: 0.3rem;
+  }
+  .stats-value {
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: $value-color;
+  }
+}
+
+// Chart card
+.chart-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  h5 {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $value-color;
+  }
+  .chart-container {
+    height: 300px;
+    position: relative;
+  }
+  .trend-data {
+    padding: 1rem;
+    .data-item {
+      margin-bottom: 1rem;
+      .data-label {
+        display: block;
+        font-size: 0.875rem;
+        color: $label-color;
+        margin-bottom: 0.3rem;
+      }
+      .data-value {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $value-color;
+      }
+    }
+  }
+}
+
+// Info cards (Unresolved Tickets & Tasks)
+.info-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: 100%;
+  .card-title {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $value-color;
+  }
+  .ticket-item,
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .badge-status {
+    font-size: 0.75rem;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
