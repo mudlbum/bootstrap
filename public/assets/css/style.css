@@ -11851,6 +11851,7 @@ body {
 
 .sidebar {
   min-height: 100vh;
+  width: 255px;
   background-color: #363740;
   padding: 1rem;
 }
@@ -11861,10 +11862,11 @@ body {
 .sidebar .nav-link {
   color: #a4a6b3;
   margin: 0.3rem 0;
+  padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
-  padding: 0.75rem;
-  border-radius: 6px;
+  border-radius: 0;
+  position: relative;
   transition: background 0.3s, color 0.3s;
 }
 .sidebar .nav-link i {
@@ -11872,12 +11874,30 @@ body {
   margin-right: 10px;
   color: #a4a6b3;
 }
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
+.sidebar .nav-link:hover {
   background-color: #3e4049;
-  color: #dde2ff;
+  color: #ffffff;
 }
-.sidebar .nav-link:hover i, .sidebar .nav-link.active i {
-  color: #dde2ff;
+.sidebar .nav-link:hover i {
+  color: #ffffff;
+}
+.sidebar .nav-link.active {
+  background-color: #3e4049;
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+}
+.sidebar .nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #dde2ff;
+}
+.sidebar .nav-link.active i {
+  color: #ffffff;
 }
 
 .top-nav {
@@ -11941,6 +11961,7 @@ body {
 }
 .chart-card .trend-data .data-item {
   margin-bottom: 1rem;
+  text-align: center;
 }
 .chart-card .trend-data .data-item .data-label {
   display: block;

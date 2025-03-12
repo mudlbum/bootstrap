@@ -30,27 +30,32 @@ body {
 }
 
 // Sidebar
-// Sidebar colors (adjusted for correct match)
-$sidebar-bg: #363740; // Dark gray background
+// Sidebar styling
+$sidebar-bg: #363740; // Dark background
 $sidebar-text: #a4a6b3; // Light gray text
-$sidebar-active-bg: #3e4049; // Slightly lighter dark for active state
-$sidebar-active-text: #dde2ff; // Light blue/white active text
+$sidebar-active-bg: #3e4049; // Background for active link
+$sidebar-active-border: #dde2ff; // Left border color for active link
+$sidebar-active-text: #ffffff; // Active text color
 
 .sidebar {
   min-height: 100vh;
+  width: 255px;
   background-color: $sidebar-bg;
   padding: 1rem;
+
   h4 {
     font-weight: 600;
-    color: #ffffff; // Title color
+    color: #ffffff; // Sidebar title
   }
+
   .nav-link {
     color: $sidebar-text;
     margin: 0.3rem 0;
+    padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
-    padding: 0.75rem;
-    border-radius: 6px;
+    border-radius: 0;
+    position: relative;
     transition: background 0.3s, color 0.3s;
 
     i {
@@ -59,10 +64,31 @@ $sidebar-active-text: #dde2ff; // Light blue/white active text
       color: $sidebar-text;
     }
 
-    &:hover,
+    &:hover {
+      background-color: $sidebar-active-bg;
+      color: $sidebar-active-text;
+      i {
+        color: $sidebar-active-text;
+      }
+    }
+
     &.active {
       background-color: $sidebar-active-bg;
       color: $sidebar-active-text;
+      font-weight: 600;
+      position: relative;
+
+      // Left border indicator
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background-color: $sidebar-active-border;
+      }
+
       i {
         color: $sidebar-active-text;
       }
@@ -132,6 +158,8 @@ $sidebar-active-text: #dde2ff; // Light blue/white active text
     padding: 1rem;
     .data-item {
       margin-bottom: 1rem;
+      text-align: center;
+
       .data-label {
         display: block;
         font-size: 0.875rem;
