@@ -30,28 +30,46 @@ body {
 }
 
 // Sidebar
+// Sidebar colors (adjusted for correct match)
+$sidebar-bg: #363740; // Dark gray background
+$sidebar-text: #a4a6b3; // Light gray text
+$sidebar-active-bg: #3e4049; // Slightly lighter dark for active state
+$sidebar-active-text: #dde2ff; // Light blue/white active text
+
 .sidebar {
   min-height: 100vh;
-  background-color: #fff;
-  border-right: 1px solid #e0e0e0;
+  background-color: $sidebar-bg;
   padding: 1rem;
   h4 {
     font-weight: 600;
+    color: #ffffff; // Title color
   }
   .nav-link {
-    color: #333;
+    color: $sidebar-text;
     margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+
     i {
       font-size: 1rem;
+      margin-right: 10px;
+      color: $sidebar-text;
     }
+
     &:hover,
     &.active {
-      color: #4c6ef5;
-      background-color: #eef3ff;
-      border-radius: 0.4rem;
+      background-color: $sidebar-active-bg;
+      color: $sidebar-active-text;
+      i {
+        color: $sidebar-active-text;
+      }
     }
   }
 }
+
 
 // Top nav / header
 .top-nav {

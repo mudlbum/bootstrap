@@ -28,50 +28,50 @@
     <!-- Container for full-width layout -->
     <div class="container-fluid">
       <div class="row">
-        <!-- Sidebar -->
-        <nav class="col-12 col-md-3 col-lg-2 bg-light sidebar">
+        <!-- Sidebar Section -->
+        <nav class="col-12 col-md-3 col-lg-2 sidebar">
           <h4 class="px-3 mb-4">Dashboard Kit</h4>
           <ul class="nav flex-column px-3">
             <li class="nav-item">
-              <a class="nav-link active" href="#"
-                ><i class="fas fa-home me-2"></i>Overview</a
-              >
+              <a class="nav-link active" href="#">
+                <i class="fas fa-home"></i> Overview
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-ticket-alt me-2"></i>Tickets</a
-              >
+              <a class="nav-link" href="#">
+                <i class="fas fa-ticket-alt"></i> Tickets
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-lightbulb me-2"></i>Ideas</a
-              >
+              <a class="nav-link" href="#">
+                <i class="fas fa-lightbulb"></i> Ideas
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-address-book me-2"></i>Contacts</a
-              >
+              <a class="nav-link" href="#">
+                <i class="fas fa-address-book"></i> Contacts
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-users me-2"></i>Agents</a
-              >
+              <a class="nav-link" href="#">
+                <i class="fas fa-users"></i> Agents
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-file-alt me-2"></i>Articles</a
-              >
+              <a class="nav-link" href="#">
+                <i class="fas fa-file-alt"></i> Articles
+              </a>
             </li>
             <hr />
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-cog me-2"></i>Settings</a
-              >
+              <a class="nav-link" href="#">
+                <i class="fas fa-cog"></i> Settings
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-credit-card me-2"></i>Subscription</a
-              >
+              <a class="nav-link" href="#">
+                <i class="fas fa-credit-card"></i> Subscription
+              </a>
             </li>
           </ul>
         </nav>
@@ -79,7 +79,9 @@
         <!-- Main Content -->
         <main class="col-12 col-md-9 col-lg-10 py-4">
           <!-- Top Nav / Header -->
-          <div class="top-nav d-flex justify-content-between align-items-center">
+          <div
+            class="top-nav d-flex justify-content-between align-items-center"
+          >
             <h2 class="m-0">Overview</h2>
             <div class="user-info">
               <div class="user-avatar"></div>
@@ -141,7 +143,9 @@
                       </div>
                       <hr />
                       <div class="data-item">
-                        <span class="data-label">Average first response time</span>
+                        <span class="data-label"
+                          >Average first response time</span
+                        >
                         <span class="data-value">33m</span>
                       </div>
                       <hr />
@@ -191,21 +195,34 @@
                     <h5 class="card-title">Tasks</h5>
                     <div class="task-item">
                       <span>Finish ticket update</span>
-                      <span><span class="badge-status bg-warning text-dark">In progress</span></span>
+                      <span
+                        ><span class="badge-status bg-warning text-dark"
+                          >In progress</span
+                        ></span
+                      >
                     </div>
                     <div class="task-item">
                       <span>Create new ticket example</span>
-                      <span><span class="badge-status bg-secondary text-white">New</span></span>
+                      <span
+                        ><span class="badge-status bg-secondary text-white"
+                          >New</span
+                        ></span
+                      >
                     </div>
                     <div class="task-item">
                       <span>Update ticket report</span>
-                      <span><span class="badge-status bg-success text-white">Done</span></span>
+                      <span
+                        ><span class="badge-status bg-success text-white"
+                          >Done</span
+                        ></span
+                      >
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div> <!-- End p-4 -->
+          </div>
+          <!-- End p-4 -->
         </main>
       </div>
     </div>
@@ -220,32 +237,32 @@
 
     <!-- Chart Initialization -->
     <script>
-      const ctx = document.getElementById('trendChart').getContext('2d');
+      const ctx = document.getElementById("trendChart").getContext("2d");
       const trendChart = new Chart(ctx, {
-        type: 'line',
+        type: "line",
         data: {
-          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
           datasets: [
             {
-              label: 'Resolved Tickets',
+              label: "Resolved Tickets",
               data: [12, 19, 8, 17, 14, 9, 15],
               fill: true,
-              backgroundColor: 'rgba(76, 110, 245, 0.1)',
-              borderColor: 'rgba(76, 110, 245, 1)',
-              tension: 0.3
-            }
-          ]
+              backgroundColor: "rgba(76, 110, 245, 0.1)",
+              borderColor: "rgba(76, 110, 245, 1)",
+              tension: 0.3,
+            },
+          ],
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
           scales: {
-            y: { beginAtZero: true }
+            y: { beginAtZero: true },
           },
           plugins: {
-            legend: { display: false }
-          }
-        }
+            legend: { display: false },
+          },
+        },
       });
     </script>
   </body>
