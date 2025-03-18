@@ -29,75 +29,151 @@ body {
   font-family: $font-family-base;
 }
 
-// Sidebar
-// Sidebar styling
-$sidebar-bg: #363740; // Dark background
-$sidebar-text: #a4a6b3; // Light gray text
-$sidebar-active-bg: #3e4049; // Background for active link
-$sidebar-active-border: #dde2ff; // Left border color for active link
-$sidebar-active-text: #ffffff; // Active text color
+// Variables
+$sidebar-width: 275px;
+$sidebar-collapsed-width: 60px;
+$sidebar-bg: #363740;
+$sidebar-text: #a4a6b3;
+$sidebar-active-bg: #3e4049;
+$sidebar-active-border: #dde2ff;
+$sidebar-active-text: #ffffff;
 
-.sidebar {
-  min-height: 100vh;
-  width: 255px;
+// Sidebar Styles
+#sidebar {
+  height: 100vh;
+  width: $sidebar-width;
   background-color: $sidebar-bg;
-  padding: 1rem;
+  padding: 60px 0px 20px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1050;
+  transition: width 0.3s ease, transform 0.3s ease;
 
   h4 {
     font-weight: 600;
-    color: #ffffff; // Sidebar title
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 4rem;
+    
   }
+  .sidebar-logo {
+    width: 46px;  // or any size you want
+    height: 46px; // if it's a square logo
+    object-fit: contain;
+    padding-right: 10px;
+  }
+  .nav {
+    .nav-item {
+      .nav-link {
+        color: $sidebar-text;
+        padding: 0.75rem 1.25rem;
+        display: grid;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        transition: background 0.3s, color 0.3s;
+        white-space: nowrap;
+        grid-template-columns: 30px auto;
+        gap: 20px;
 
-  .nav-link {
-    color: $sidebar-text;
-    margin: 0.3rem 0;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    border-radius: 0;
-    position: relative;
-    transition: background 0.3s, color 0.3s;
 
-    i {
-      font-size: 1rem;
-      margin-right: 10px;
-      color: $sidebar-text;
-    }
+        i {
+          font-size: 1rem;
+          margin-right: 12px;
+          color: $sidebar-text;
+          text-align: center;  
+        }
 
-    &:hover {
-      background-color: $sidebar-active-bg;
-      color: $sidebar-active-text;
-      i {
-        color: $sidebar-active-text;
-      }
-    }
+        .nav-text {
+          display: inline;
+        }
 
-    &.active {
-      background-color: $sidebar-active-bg;
-      color: $sidebar-active-text;
-      font-weight: 600;
-      position: relative;
+        &:hover {
+          background-color: $sidebar-active-bg;
+          color: $sidebar-active-text;
+          i { color: $sidebar-active-text; }
+        }
 
-      // Left border indicator
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 2px;
-        background-color: $sidebar-active-border;
-      }
+        &.active {
+          background-color: $sidebar-active-bg;
+          color: $sidebar-active-text;
+          font-weight: 600;
+          position: relative;
 
-      i {
-        color: $sidebar-active-text;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: $sidebar-active-border;
+          }
+
+          i { color: $sidebar-active-text; }
+        }
       }
     }
   }
 }
 
+// Mobile Responsive Adjustments
+@media (max-width: 768px) {
+  // Sidebar defaults to collapsed width
+  #sidebar {
+    width: $sidebar-collapsed-width;
+    overflow-x: hidden;
+  }
+  // Hide the header (Dashboard Kit) when collapsed
+  #sidebar:not(.open) h4 {
+    display: none;
+  }
+   // Sidebar overlay for mobile
+  #sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    }
+  #sidebar-overlay.show {
+    display: block;
+  }
+  // Main content on mobile (no left margin)
+  #main-content {
+    margin-left: 50px;
+    padding: 1rem;
+  }
+  #sidebar .nav-link {
+    justify-content: center;
+  }
+  #sidebar .nav-link .nav-text {
+    display: none !important;
+  }
+}
 
-// Top nav / header
+
+// Desktop: Main content is pushed right by the sidebar width
+@media (min-width: 768px) {
+  #main-content {
+    margin-left: $sidebar-width;
+    padding: 2rem;
+  }
+}
+
+// Global Styles
+body {
+  background-color: #f7f8fc;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .top-nav {
   border-bottom: 1px solid #e0e0e0;
   padding: 1rem;
@@ -105,20 +181,69 @@ $sidebar-active-text: #ffffff; // Active text color
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   .user-info {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 2rem; // space between elements
+    @media (max-width: 768px) {
+      gap: 0.75rem; // smaller gap on mobile
+    }
+
+    // Search icon
+    .search-icon {
+      font-size: 1.1rem;
+      color: #9fa2b4;
+      cursor: pointer;
+      position: relative;
+      &:hover {
+        color: #4c6ef5; // hover color if desired
+      }
+    }
+
+    // Notification icon container
+    .notification-icon {
+      position: relative; // so the dot can be absolutely positioned
+      i {
+        font-size: 1.1rem;
+        color: #9fa2b4;
+        cursor: pointer;
+        &:hover {
+          color: #4c6ef5;
+        }
+      }
+      // The notification dot
+      .notify-dot {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        width: 8px;
+        height: 8px;
+        background-color: #4c6ef5; // dot color
+        border-radius: 50%;
+        border: 2px solid #fff; 
+      }
+    }
+
+    // Optional vertical divider
+    .vertical-divider {
+      width: 1px;
+      height: 24px;
+      background-color: #e0e0e0;
+    }
+
+    // Avatar
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
   }
 }
-.user-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #ccc;
-}
 
-// Stats cards
+
+// Stats Cards
 .stats-card {
   background-color: #fff;
   border: 1px solid #e0e0e0;
@@ -128,54 +253,62 @@ $sidebar-active-text: #ffffff; // Active text color
   .stats-label {
     display: block;
     font-size: 0.875rem;
-    color: $label-color;
+    color: #9fa2b4;
     margin-bottom: 0.3rem;
   }
   .stats-value {
     font-weight: 600;
     font-size: 1.75rem;
-    color: $value-color;
+    color: #1f1f1f;
   }
 }
 
-// Chart card
+// Chart Card
 .chart-card {
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0rem;
   h5 {
     margin-bottom: 1rem;
     font-size: 1.125rem;
     font-weight: 600;
-    color: $value-color;
+    color: #1f1f1f;
   }
   .chart-container {
-    height: 300px;
+    height: 100%;
     position: relative;
   }
   .trend-data {
     padding: 1rem;
+    padding-left: 0;
+    padding-right: 0;
     .data-item {
       margin-bottom: 1rem;
       text-align: center;
-
       .data-label {
         display: block;
         font-size: 0.875rem;
-        color: $label-color;
-        margin-bottom: 0.3rem;
+        color: #9fa2b4;
+        margin-bottom: 0.25rem;
       }
       .data-value {
         font-size: 1.25rem;
         font-weight: 600;
-        color: $value-color;
+        color: #1f1f1f;
       }
     }
   }
 }
+.data-column {
+  border-left: 1px solid #e0e0e0; // vertical bar
+  padding-left: 0px;            // some spacing so text doesn't touch the bar
+}
 
-// Info cards (Unresolved Tickets & Tasks)
+// Info Cards (Tickets & Tasks)
+.card-body{
+  padding-right: 0;
+}
 .info-card {
   background-color: #fff;
   border: 1px solid #e0e0e0;
@@ -186,7 +319,7 @@ $sidebar-active-text: #ffffff; // Active text color
     margin-bottom: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: $value-color;
+    color: #1f1f1f;
   }
   .ticket-item,
   .task-item {

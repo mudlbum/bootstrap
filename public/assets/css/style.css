@@ -11849,45 +11849,65 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-.sidebar {
-  min-height: 100vh;
-  width: 255px;
+#sidebar {
+  height: 100vh;
+  width: 275px;
   background-color: #363740;
-  padding: 1rem;
+  padding: 60px 0px 20px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1050;
+  transition: width 0.3s ease, transform 0.3s ease;
 }
-.sidebar h4, .sidebar .h4 {
+#sidebar h4, #sidebar .h4 {
   font-weight: 600;
   color: #ffffff;
+  text-align: center;
+  margin-bottom: 4rem;
 }
-.sidebar .nav-link {
+#sidebar .sidebar-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  padding-right: 10px;
+}
+#sidebar .nav .nav-item .nav-link {
   color: #a4a6b3;
-  margin: 0.3rem 0;
-  padding: 0.75rem 1rem;
-  display: flex;
+  padding: 0.75rem 1.25rem;
+  display: grid;
   align-items: center;
-  border-radius: 0;
+  width: 100%;
   position: relative;
   transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
+  grid-template-columns: 30px auto;
+  gap: 20px;
 }
-.sidebar .nav-link i {
+#sidebar .nav .nav-item .nav-link i {
   font-size: 1rem;
-  margin-right: 10px;
+  margin-right: 12px;
   color: #a4a6b3;
+  text-align: center;
 }
-.sidebar .nav-link:hover {
+#sidebar .nav .nav-item .nav-link .nav-text {
+  display: inline;
+}
+#sidebar .nav .nav-item .nav-link:hover {
   background-color: #3e4049;
   color: #ffffff;
 }
-.sidebar .nav-link:hover i {
+#sidebar .nav .nav-item .nav-link:hover i {
   color: #ffffff;
 }
-.sidebar .nav-link.active {
+#sidebar .nav .nav-item .nav-link.active {
   background-color: #3e4049;
   color: #ffffff;
   font-weight: 600;
   position: relative;
 }
-.sidebar .nav-link.active::before {
+#sidebar .nav .nav-item .nav-link.active::before {
   content: "";
   position: absolute;
   left: 0;
@@ -11896,8 +11916,53 @@ body {
   width: 2px;
   background-color: #dde2ff;
 }
-.sidebar .nav-link.active i {
+#sidebar .nav .nav-item .nav-link.active i {
   color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    width: 60px;
+    overflow-x: hidden;
+  }
+  #sidebar:not(.open) h4, #sidebar:not(.open) .h4 {
+    display: none;
+  }
+  #sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+  #sidebar-overlay.show {
+    display: block;
+  }
+  #main-content {
+    margin-left: 50px;
+    padding: 1rem;
+  }
+  #sidebar .nav-link {
+    justify-content: center;
+  }
+  #sidebar .nav-link .nav-text {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  #main-content {
+    margin-left: 275px;
+    padding: 2rem;
+  }
+}
+body {
+  background-color: #f7f8fc;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .top-nav {
@@ -11911,10 +11976,49 @@ body {
 .top-nav .user-info {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 2rem;
 }
-
-.user-avatar {
+@media (max-width: 768px) {
+  .top-nav .user-info {
+    gap: 0.75rem;
+  }
+}
+.top-nav .user-info .search-icon {
+  font-size: 1.1rem;
+  color: #9fa2b4;
+  cursor: pointer;
+  position: relative;
+}
+.top-nav .user-info .search-icon:hover {
+  color: #4c6ef5;
+}
+.top-nav .user-info .notification-icon {
+  position: relative;
+}
+.top-nav .user-info .notification-icon i {
+  font-size: 1.1rem;
+  color: #9fa2b4;
+  cursor: pointer;
+}
+.top-nav .user-info .notification-icon i:hover {
+  color: #4c6ef5;
+}
+.top-nav .user-info .notification-icon .notify-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #4c6ef5;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.top-nav .user-info .vertical-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #e0e0e0;
+}
+.top-nav .user-info .user-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -11944,7 +12048,7 @@ body {
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0rem;
 }
 .chart-card h5, .chart-card .h5 {
   margin-bottom: 1rem;
@@ -11953,11 +12057,13 @@ body {
   color: #1f1f1f;
 }
 .chart-card .chart-container {
-  height: 300px;
+  height: 100%;
   position: relative;
 }
 .chart-card .trend-data {
   padding: 1rem;
+  padding-left: 0;
+  padding-right: 0;
 }
 .chart-card .trend-data .data-item {
   margin-bottom: 1rem;
@@ -11967,12 +12073,21 @@ body {
   display: block;
   font-size: 0.875rem;
   color: #9fa2b4;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 .chart-card .trend-data .data-item .data-value {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1f1f1f;
+}
+
+.data-column {
+  border-left: 1px solid #e0e0e0;
+  padding-left: 0px;
+}
+
+.card-body {
+  padding-right: 0;
 }
 
 .info-card {
