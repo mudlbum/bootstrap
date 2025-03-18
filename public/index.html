@@ -199,18 +199,40 @@
         <div class="col-12 col-md-6">
           <div class="card info-card">
             <div class="card-body">
-              <h5 class="card-title">Tasks</h5>
-              <div class="task-item">
-                <span>Finish ticket update</span>
-                <span><span class="badge-status bg-warning text-dark">In progress</span></span>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="card-title m-0">Tasks</h5>
+                <a href="#" class="text-primary text-decoration-none small">View all</a>
+              </div>
+              <p class="text-muted small m-0">Today</p>
+              <div class="d-flex justify-content-between align-items-center create-task">
+                <span class="text-muted">Create new task</span>
+                <button class="btn btn-light btn-sm rounded-circle shadow-sm">
+                  <i class="bi bi-plus"></i>
+                </button>
               </div>
               <div class="task-item">
-                <span>Create new ticket example</span>
-                <span><span class="badge-status bg-secondary text-white">New</span></span>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1">
+                    Finish Ticket Update</label>
+                </div>
+                <span class="badge bg-warning text-dark">URGENT</span>
               </div>
               <div class="task-item">
-                <span>Update ticket report</span>
-                <span><span class="badge-status bg-success text-white">Done</span></span>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1">
+                    Create New Ticket Example</label>
+                </div>
+                <span class="badge bg-success">NEW</span>
+              </div>
+              <div class="task-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1">
+                    Update Ticket Report</label>
+                </div>
+                <span class="badge bg-secondary">DEFAULT</span>
               </div>
             </div>
           </div>
