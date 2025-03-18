@@ -12200,4 +12200,8 @@ body {
   font-weight: 600;
 }
 
+#cardSpace, #cardSpace2 {
+  padding-top: 50px;
+}
+
 /*# sourceMappingURL=style.css.map */
