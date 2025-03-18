@@ -264,29 +264,73 @@
   <!-- Chart Initialization -->
   <script>
     const ctx = document.getElementById("trendChart").getContext("2d");
+  
     const trendChart = new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"],
         datasets: [
           {
-            label: "Resolved Tickets",
-            data: [12, 19, 8, 17, 14, 9, 15],
+            label: "Today",
+            data: [5, 10, 15, 20, 27, 34, 30, 26, 18, 15, 22, 26, 32, 30, 28, 32, 38, 40, 35, 25, 20, 16],
+            borderColor: "rgba(47, 84, 235, 1)",
+            backgroundColor: "rgba(47, 84, 235, 0.1)",
+            pointBackgroundColor: "rgba(47, 84, 235, 1)",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
             fill: true,
-            backgroundColor: "rgba(76, 110, 245, 0.1)",
-            borderColor: "rgba(76, 110, 245, 1)",
-            tension: 0.3,
+            tension: 0.4
           },
-        ],
+          {
+            label: "Yesterday",
+            data: [3, 8, 12, 18, 22, 30, 25, 20, 14, 12, 19, 22, 28, 25, 23, 26, 32, 35, 30, 20, 18, 14],
+            borderColor: "rgba(47, 84, 235, 0.3)",
+            backgroundColor: "rgba(47, 84, 235, 0.05)",
+            pointBackgroundColor: "rgba(47, 84, 235, 0.3)",
+            borderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            fill: true,
+            tension: 0.4
+          }
+        ]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        scales: { y: { beginAtZero: true } },
-        plugins: { legend: { display: false } },
-      },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: "#eee" },
+            ticks: { color: "#9fa2b4" }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: "#9fa2b4" }
+          }
+        },
+        plugins: {
+          legend: {
+            display: true,
+            labels: { usePointStyle: true, color: "#9fa2b4" },
+            position: "top",
+            align: "end"
+          },
+          tooltip: {
+            backgroundColor: "#fff",
+            titleColor: "#1f1f1f",
+            bodyColor: "#1f1f1f",
+            borderColor: "#ccc",
+            borderWidth: 1,
+            displayColors: false,
+            bodySpacing: 6
+          }
+        }
+      }
     });
   </script>
+  
 </body>
 
 </html>
