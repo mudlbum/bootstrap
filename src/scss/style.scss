@@ -243,15 +243,17 @@ body {
     }
   }
 }
-
+.g-3, .gx-3 {
+  --bs-gutter-x: 2rem;
+}
 
 // Stats Cards
 .stats-card {
   border: 2px solid transparent; // Default border
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: #fff;
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
