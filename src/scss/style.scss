@@ -6,13 +6,18 @@ $body-bg: #f8f9fc; // Background color
 
 // 2. Import Bootstrap functions first
 @import "../../node_modules/bootstrap/scss/functions";
+$warning: #FEC400;
+$success:#29CC97;
+
 
 // 3. Override Bootstrap variables **BEFORE importing Bootstrap**
 $primary: #4c6ef5;
-$secondary: #ff5722;
+$secondary: #F0F1F7;
+
 
 // 4. Import Bootstrap SCSS (AFTER variable overrides)
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
 
 body {
   background-color: $body-bg;
@@ -425,10 +430,4 @@ body {
     font-weight: 600;
   }
 }
-.create-task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px; // Add spacing between "Today" and this section
-  padding-bottom: 10px;
-}
+
