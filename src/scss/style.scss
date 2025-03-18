@@ -245,21 +245,48 @@ body {
 
 // Stats Cards
 .stats-card {
+  border: 2px solid transparent; // Default border
+  border-radius: 10px;
   background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.5rem;
-  padding: 1rem;
   text-align: center;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
   .stats-label {
     display: block;
     font-size: 0.875rem;
-    color: #9fa2b4;
-    margin-bottom: 0.3rem;
+    color: #9fa2b4; // Light gray for text
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease-in-out;
   }
+
   .stats-value {
+    font-size: 1.5rem;
     font-weight: 600;
-    font-size: 1.75rem;
-    color: #1f1f1f;
+    color: #1f1f1f; // Dark text by default
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:hover {
+    border-color: #2f54eb; // Blue border on hover
+    box-shadow: 0 4px 8px rgba(47, 84, 235, 0.2);
+    .stats-label {
+      color: #2f54eb; // Blue text on hover
+    }
+    .stats-value {
+      color: #2f54eb; // Bold blue number on hover
+    }
+  }
+
+  &.active {
+    border-color: #2f54eb; // Active state blue border
+    .stats-label {
+      color: #2f54eb;
+    }
+    .stats-value {
+      color: #2f54eb;
+    }
   }
 }
 

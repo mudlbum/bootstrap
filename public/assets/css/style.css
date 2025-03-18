@@ -12026,22 +12026,45 @@ body {
 }
 
 .stats-card {
+  border: 2px solid transparent;
+  border-radius: 10px;
   background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.5rem;
-  padding: 1rem;
   text-align: center;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 .stats-card .stats-label {
   display: block;
   font-size: 0.875rem;
   color: #9fa2b4;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease-in-out;
 }
 .stats-card .stats-value {
+  font-size: 1.5rem;
   font-weight: 600;
-  font-size: 1.75rem;
   color: #1f1f1f;
+  transition: color 0.3s ease-in-out;
+}
+.stats-card:hover {
+  border-color: #2f54eb;
+  box-shadow: 0 4px 8px rgba(47, 84, 235, 0.2);
+}
+.stats-card:hover .stats-label {
+  color: #2f54eb;
+}
+.stats-card:hover .stats-value {
+  color: #2f54eb;
+}
+.stats-card.active {
+  border-color: #2f54eb;
+}
+.stats-card.active .stats-label {
+  color: #2f54eb;
+}
+.stats-card.active .stats-value {
+  color: #2f54eb;
 }
 
 .chart-card {
