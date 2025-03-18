@@ -12055,10 +12055,15 @@ body {
   font-size: 1.125rem;
   font-weight: 600;
   color: #1f1f1f;
+  padding: 1rem;
+}
+.chart-card .chart-column {
+  padding: 1rem;
 }
 .chart-card .chart-container {
   height: 100%;
   position: relative;
+  padding: 1rem;
 }
 .chart-card .trend-data {
   padding: 1rem;
@@ -12088,6 +12093,7 @@ body {
 
 .card-body {
   padding-right: 0;
+  padding: 0 0 0 0;
 }
 
 .info-card {

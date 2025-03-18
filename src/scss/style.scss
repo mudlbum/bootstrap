@@ -269,15 +269,22 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
   padding: 0rem;
+  
   h5 {
     margin-bottom: 1rem;
     font-size: 1.125rem;
     font-weight: 600;
     color: #1f1f1f;
+    padding: 1rem;  // Adjust padding as needed
+
+  }
+  .chart-column {
+    padding: 1rem;  // Adjust padding as needed
   }
   .chart-container {
     height: 100%;
     position: relative;
+    padding: 1rem;  // Adjust padding as needed
   }
   .trend-data {
     padding: 1rem;
@@ -308,6 +315,7 @@ body {
 // Info Cards (Tickets & Tasks)
 .card-body{
   padding-right: 0;
+  padding: 0 0 0 0;
 }
 .info-card {
   background-color: #fff;

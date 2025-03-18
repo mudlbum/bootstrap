@@ -127,17 +127,19 @@
       <!-- Today’s Trends Card -->
       <div class="card chart-card mb-4">
         <div class="card-body">
-          <h5 class="card-title">Today’s trends</h5>
-          <div class="row">
+
+          <!-- Make row a flex container -->
+          <div class="row d-flex align-items-stretch">
             <!-- Chart Column -->
-            <div class="col-md-8 chart-column">
-              <div class="chart-container">
+            <div class="col-md-8 d-flex flex-column chart-column">
+              <h5 class="card-title">Today’s trends</h5>
+              <div class="chart-container flex-grow-1">
                 <canvas id="trendChart"></canvas>
               </div>
             </div>
-            <!-- Data Column (with Vertical Line) -->
-            <div class="col-md-4 data-column">
-              <div class="trend-data">
+            <!-- Data Column (with Full-Height Vertical Border) -->
+            <div class="col-md-4 d-flex flex-column data-column">
+              <div class="trend-data flex-grow-1">
                 <div class="data-item">
                   <span class="data-label">Resolved</span>
                   <span class="data-value">449</span>
@@ -167,6 +169,7 @@
           </div>
         </div>
       </div>
+
 
       <!-- Unresolved Tickets & Tasks -->
       <div class="row g-3">
