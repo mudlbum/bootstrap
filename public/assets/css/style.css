@@ -12084,12 +12084,34 @@ body {
   padding: 0rem;
   font-family: "Mulish", sans-serif;
 }
-.chart-card h5, .chart-card .h5 {
-  margin-bottom: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1f1f1f;
+.chart-card .chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
+}
+.chart-card .chart-legend {
+  display: flex;
+  gap: 10px;
+}
+.chart-card .legend-item {
+  font-size: 0.875rem;
+  color: #9fa2b4;
+  display: flex;
+  align-items: center;
+}
+.chart-card .legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.chart-card .today {
+  background-color: rgb(47, 84, 235);
+}
+.chart-card .yesterday {
+  background-color: rgba(47, 84, 235, 0.3);
 }
 .chart-card .chart-column {
   padding: 1rem;
