@@ -12045,14 +12045,15 @@ body {
 }
 .stats-card .stats-label {
   display: block;
-  font-size: 0.875rem;
+  font-size: 1.2rem;
+  font-weight: 800;
   color: #9fa2b4;
   margin-bottom: 0.25rem;
   transition: color 0.3s ease-in-out;
 }
 .stats-card .stats-value {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #1f1f1f;
   transition: color 0.3s ease-in-out;
 }
