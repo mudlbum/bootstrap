@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -74,7 +75,7 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: "Inter", sans-serif;
+  --bs-body-font-family: "Mulish", sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -4489,11 +4490,11 @@ textarea.form-control-lg {
   --bs-accordion-btn-padding-y: 1rem;
   --bs-accordion-btn-color: var(--bs-body-color);
   --bs-accordion-btn-bg: var(--bs-accordion-bg);
-  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%234c6ef5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
   --bs-accordion-btn-icon-width: 1.25rem;
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ff5722' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='rgb%2830.4, 44, 98%29' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(76, 110, 245, 0.25);
   --bs-accordion-body-padding-x: 1.25rem;
   --bs-accordion-body-padding-y: 1rem;
@@ -5685,7 +5686,7 @@ textarea.form-control-lg {
   z-index: var(--bs-tooltip-zindex);
   display: block;
   margin: var(--bs-tooltip-margin);
-  font-family: "Inter", sans-serif;
+  font-family: "Mulish", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5795,7 +5796,7 @@ textarea.form-control-lg {
   z-index: var(--bs-popover-zindex);
   display: block;
   max-width: var(--bs-popover-max-width);
-  font-family: "Inter", sans-serif;
+  font-family: "Mulish", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -11845,8 +11846,16 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-color: #f7f8fc;
-  font-family: "Inter", sans-serif;
+  background-color: #f8f9fc;
+  font-family: "Mulish", sans-serif;
+}
+
+body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, div, a, label, button, input {
+  font-family: "Mulish", sans-serif !important;
+}
+
+.info-card, .task-item, .ticket-item, .card-title {
+  font-family: "Mulish", sans-serif !important;
 }
 
 #sidebar {
@@ -12072,6 +12081,7 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
   padding: 0rem;
+  font-family: "Mulish", sans-serif;
 }
 .chart-card h5, .chart-card .h5 {
   margin-bottom: 1rem;
@@ -12114,39 +12124,88 @@ body {
   padding-left: 0px;
 }
 
-.card-body {
-  padding-right: 0;
-  padding: 0 0 0 0;
-}
-
 .info-card {
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
   height: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 .info-card .card-title {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
   color: #1f1f1f;
+  text-transform: capitalize;
 }
-.info-card .ticket-item,
-.info-card .task-item {
+.info-card p.text-muted {
+  color: #9fa2b4 !important;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+.info-card .ticket-item {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0;
+  align-items: center;
+  padding: 1rem 0;
   border-bottom: 1px solid #eee;
 }
-.info-card .ticket-item:last-child,
-.info-card .task-item:last-child {
+.info-card .ticket-item:last-child {
   border-bottom: none;
 }
-.info-card .badge-status {
+.info-card .ticket-item span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.info-card .ticket-item span:last-child {
+  color: #9fa2b4;
+  font-weight: 600;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+.task-item:last-child {
+  border-bottom: none;
+}
+.task-item label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.task-item .form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.task-item .form-check-input {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+.task-item .form-check-input:checked {
+  background-color: #2f54eb;
+  border-color: #2f54eb;
+}
+.task-item .badge {
   font-size: 0.75rem;
-  border-radius: 0.4rem;
-  padding: 0.3rem 0.5rem;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.create-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

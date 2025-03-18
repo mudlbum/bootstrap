@@ -1,32 +1,29 @@
-// 1. Import Bootstrap functions first
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+
+// 1. Set Global Font Variables
+$font-family-base: 'Mulish', sans-serif !default;
+$body-bg: #f8f9fc; // Background color
+
+// 2. Import Bootstrap functions first
 @import "../../node_modules/bootstrap/scss/functions";
 
-// 2. Override Bootstrap variables as needed
-$primary: #4c6ef5;          // Primary color
-$secondary: #ff5722;        // Secondary color
-$body-bg: #f8f9fc;          // Background color
-$font-family-base: 'Inter', sans-serif;
+// 3. Override Bootstrap variables **BEFORE importing Bootstrap**
+$primary: #4c6ef5;
+$secondary: #ff5722;
 
-// Example overrides for accordion icons (if applicable)
-$accordion-icon-color: $primary;
-$accordion-icon-active-color: $secondary;
-
-// 3. Import full Bootstrap SCSS so our variables take effect
+// 4. Import Bootstrap SCSS (AFTER variable overrides)
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-// 4. Custom Styles
-
-// Global overrides
-$body-bg: #f7f8fc; // A slightly off-white background
-$font-family-base: 'Inter', sans-serif;
-
-// Custom colors for text
-$label-color: #9fa2b4;   // Lighter gray for small labels
-$value-color: #1f1f1f;   // Darker gray for main values
 
 body {
   background-color: $body-bg;
   font-family: $font-family-base;
+}
+body, h1, h2, h3, h4, h5, h6, p, span, div, a, label, button, input {
+  font-family: 'Mulish', sans-serif !important;
+}
+
+.info-card, .task-item, .ticket-item, .card-title {
+  font-family: 'Mulish', sans-serif !important;
 }
 
 // Variables
@@ -296,6 +293,7 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
   padding: 0rem;
+  font-family: 'Mulish', sans-serif;
   
   h5 {
     margin-bottom: 1rem;
@@ -339,35 +337,98 @@ body {
 }
 
 // Info Cards (Tickets & Tasks)
-.card-body{
-  padding-right: 0;
-  padding: 0 0 0 0;
-}
 .info-card {
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 1.5rem; // Increased for better spacing
   height: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); // Soft shadow
+
   .card-title {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
     color: #1f1f1f;
+    text-transform: capitalize;
   }
-  .ticket-item,
-  .task-item {
+
+  p.text-muted {
+    color: #9fa2b4 !important;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .ticket-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    align-items: center; // Ensures text and numbers align properly
+    padding: 1rem 0; // More vertical space
     border-bottom: 1px solid #eee;
+
     &:last-child {
       border-bottom: none;
     }
+
+    span {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    span:last-child {
+      color: #9fa2b4;
+      font-weight: 600;
+    }
   }
-  .badge-status {
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  // Ensure checkboxes align properly
+  .form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px; // Space between checkbox and text
+  }
+
+  .form-check-input {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+
+    &:checked {
+      background-color: #2f54eb;
+      border-color: #2f54eb;
+    }
+  }
+
+  .badge {
     font-size: 0.75rem;
-    border-radius: 0.4rem;
-    padding: 0.3rem 0.5rem;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-weight: 600;
   }
+}
+.create-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px; // Add spacing between "Today" and this section
+  padding-bottom: 10px;
 }

@@ -11,8 +11,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "all": "^0.0.0",
     "bootstrap": "^5.3.3",
-    "sass": "^1.85.1"
+    "sass": "^1.86.0"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
