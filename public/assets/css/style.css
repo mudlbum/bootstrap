@@ -1,9 +1,9 @@
 /* Error: expected "{".
  *     ,
- * 351 | >>>>>>> Stashed changes
+ * 357 | >>>>>>> Stashed changes
  *     |                        ^
  *     '
- *   src/scss/style.scss 351:24  root stylesheet */
+ *   src/scss/style.scss 357:24  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a     \2577 \a 351 \2502  >>>>>>> Stashed changes\a     \2502                         ^\a     \2575 \a   src/scss/style.scss 351:24  root stylesheet';
+  content: 'Error: expected "{".\a     \2577 \a 357 \2502  >>>>>>> Stashed changes\a     \2502                         ^\a     \2575 \a   src/scss/style.scss 357:24  root stylesheet';
 }
