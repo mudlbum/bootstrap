@@ -271,6 +271,7 @@
 
   <!-- Chart Initialization -->
   <script>
+<<<<<<< Updated upstream
    const ctx = document.getElementById("trendChart").getContext("2d");
 
 const trendChart = new Chart(ctx, {
@@ -289,6 +290,41 @@ const trendChart = new Chart(ctx, {
         pointHoverRadius: 6,
         fill: true,
         tension: 0.45
+=======
+    
+    const ctx = document.getElementById("trendChart").getContext("2d");
+  
+    const trendChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"],
+        datasets: [
+          {
+            label: "Today",
+            data: [5, 10, 15, 20, 27, 34, 30, 26, 18, 15, 22, 26, 32, 30, 28, 32, 38, 40, 35, 25, 20, 16],
+            borderColor: "rgba(47, 84, 235, 1)",
+            backgroundColor: "rgba(47, 84, 235, 0.1)",
+            pointBackgroundColor: "rgba(47, 84, 235, 1)",
+            borderWidth: 2,
+            pointRadius: 0,
+            pointHoverRadius: 6,
+            fill: true,
+            tension: 0.45
+          },
+          {
+            label: "Yesterday",
+            data: [3, 8, 12, 18, 22, 30, 25, 20, 14, 12, 19, 22, 28, 25, 23, 26, 32, 35, 30, 20, 18, 14],
+            borderColor: "rgba(47, 84, 235, 0.3)",
+            backgroundColor: "rgba(47, 84, 235, 0.05)",
+            pointBackgroundColor: "rgba(47, 84, 235, 0.3)",
+            borderWidth: 2,
+            pointRadius: 0,
+            pointHoverRadius: 6,
+            fill: true,
+            tension: 0.45
+          }
+        ]
+>>>>>>> Stashed changes
       },
       {
         label: "Yesterday",

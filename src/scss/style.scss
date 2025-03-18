@@ -293,13 +293,13 @@ body {
   }
 }
 
-// Chart Card
 .chart-card {
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
-  padding: 0rem;
+  padding: 1.5rem; // Adjust padding for better spacing
   font-family: 'Mulish', sans-serif;
+<<<<<<< Updated upstream
   
   .chart-header {
     display: flex;
@@ -334,28 +334,75 @@ body {
   
   .yesterday {
     background-color: rgba(47, 84, 235, 0.3);
+=======
+
+  .chart-header {
+    display: flex;
+    justify-content: space-between; // Align title to left, legend to right
+    align-items: center;
+    margin-bottom: 1rem;
   }
-  .chart-column {
-    padding: 1rem;  // Adjust padding as needed
+
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f1f1f;
+    margin: 0;
+>>>>>>> Stashed changes
   }
+
+  .chart-legend {
+    display: flex;
+    align-items: center;
+    gap: 15px; // Space between legend items
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #9fa2b4;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+
+      &.today {
+        background-color: #2f54eb;
+      }
+
+      &.yesterday {
+        background-color: rgba(47, 84, 235, 0.3);
+      }
+    }
+  }
+
   .chart-container {
     height: 100%;
     position: relative;
-    padding: 1rem;  // Adjust padding as needed
+    padding: 1rem;
   }
+
   .trend-data {
     padding: 1rem;
     padding-left: 0;
     padding-right: 0;
+
     .data-item {
       margin-bottom: 1rem;
       text-align: center;
+
       .data-label {
         display: block;
         font-size: 0.875rem;
         color: #9fa2b4;
         margin-bottom: 0.25rem;
       }
+
       .data-value {
         font-size: 1.25rem;
         font-weight: 600;
@@ -364,11 +411,11 @@ body {
     }
   }
 }
-.data-column {
-  border-left: 1px solid #e0e0e0; // vertical bar
-  padding-left: 0px;            // some spacing so text doesn't touch the bar
-}
 
+.data-column {
+  border-left: 1px solid #e0e0e0;
+  padding-left: 0px;
+}
 // Info Cards (Tickets & Tasks)
 .info-card {
   background-color: #fff;
