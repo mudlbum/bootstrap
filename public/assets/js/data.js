@@ -1,4 +1,4 @@
-// Sample JSON data
+// Data sets for the dashboard
 const dashboardData = {
   stats: [
     { label: "Unresolved", value: 60 },
@@ -26,12 +26,14 @@ const dashboardData = {
   ]
 };
 
-// Populate everything on DOMContentLoaded
+// Wait for DOM to load before populating
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM loaded — initializing dashboard data...");
   populateStats();
   populateMetrics();
   populateTickets();
   populateTasks();
+  console.log("All sections populated successfully.");
 });
 
 // Populate Stats Cards
@@ -39,6 +41,7 @@ function populateStats() {
   const statsRow = document.getElementById("stats-row");
   statsRow.innerHTML = "";
   dashboardData.stats.forEach(stat => {
+    console.log(`Adding stat: ${stat.label} - ${stat.value}`);
     statsRow.innerHTML += `
       <div class="col">
         <div class="stats-card">
@@ -50,11 +53,12 @@ function populateStats() {
   });
 }
 
-// Populate Metric Column (beside chart)
+// Populate Metric Column
 function populateMetrics() {
   const metricsContainer = document.getElementById("metrics-container");
   metricsContainer.innerHTML = "";
   dashboardData.metrics.forEach((metric, index) => {
+    console.log(`Adding metric: ${metric.label} - ${metric.value}`);
     metricsContainer.innerHTML += `
       <div class="data-item">
         <span class="data-label">${metric.label}</span>
@@ -65,11 +69,12 @@ function populateMetrics() {
   });
 }
 
-// 3. Populate Unresolved Tickets
+// Populate Unresolved Tickets
 function populateTickets() {
   const ticketContainer = document.getElementById("ticket-container");
   ticketContainer.innerHTML = "";
   dashboardData.tickets.forEach(ticket => {
+    console.log(`Adding ticket: ${ticket.label} - ${ticket.value}`);
     ticketContainer.innerHTML += `
       <div class="ticket-item">
         <span>${ticket.label}</span>
@@ -79,11 +84,12 @@ function populateTickets() {
   });
 }
 
-// 4. Populate Tasks List
+// Populate Tasks
 function populateTasks() {
   const taskContainer = document.getElementById("task-container");
   taskContainer.innerHTML = "";
   dashboardData.tasks.forEach((task, index) => {
+    console.log(`Adding task: ${task.label} [${task.badge}]`);
     taskContainer.innerHTML += `
       <div class="task-item">
         <div class="form-check">
